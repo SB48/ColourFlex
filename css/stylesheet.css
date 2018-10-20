@@ -14,7 +14,6 @@
     text-align: center;
   }
 
-
   .bgcolour {
     color: #6610f2;
   }
@@ -36,35 +35,11 @@
       color: black;
   }
 
-    .aboutTitle {
-      float: left;
-      color : #8A97A8;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: 30px;
-      line-height: 25px;
-      border-radius: 4px;
-    }
 
+  .aboutTitle {
+    color : #8A97A8;
 
-    .contactBox{
-          border:  2px solid #8A97A8;
-          width : 300px;
-          margin-left : 500px;
-    }
-
-    .contact {
-      float: right;
-      color: #8A97A8;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: 30px;
-      line-height: 25px;
-      border-radius: 4px;
-    }
-
+  }
 
   .horLine{
       display: block;
@@ -130,15 +105,3 @@
       width: 150px;
       border-radius: 50%;
     }
-
-    .img{
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 5px;
-        width: 150px;
-    }
-
-    .img:hover {
-        box-shadow: 0 0 2px 1px #444;
-    }
-
