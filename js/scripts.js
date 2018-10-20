@@ -19,7 +19,13 @@ function getColourValues(data) {
 	return colourValues;
 }
 
+function setBackground(url) {
+	document.getElementById('leftHalf').style.backgroundImage = "url("+url+")";
+}
+
 function updateColours(colourNamesArray, colourValuesArray) {
+	
+	
 	for (i = 0; i < colourNamesArray.length; i++) {
 		var elem = document.createElement('div');
 		
@@ -30,10 +36,10 @@ function updateColours(colourNamesArray, colourValuesArray) {
 		}
 		
 		console.log(colourNamesArray[i] + " " + colourValuesArray[i]);
-		elem.style.cssText = 'position:absolute;width:100%;height:20%;z-index:100;background:' + colourValuesArray[i];
+		elem.style.cssText = 'z-index:100;background:' + colourValuesArray[i];
 		
 		
-		document.body.appendChild(elem);
+		document.getElementById('colourBlocks').appendChild(elem);
 	}
 }
 
@@ -47,14 +53,12 @@ var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 	} : null;
 }
 
-alert( hexToRgb("#0033ff").g ); // "51";
-
 
 document.getElementById("submit").addEventListener("click", function(){   
 
 	var request = new XMLHttpRequest();
-	var text = document.getElementById('textfield').value;
-	var url = 'https://apicloud-colortag.p.mashape.com/tag-url.json?url=' + text;
+	var txt = document.getElementById('textfield').value;
+	var url = 'https://apicloud-colortag.p.mashape.com/tag-url.json?url=' + txt;
 
 	request.open('GET', url, true);
 	request.setRequestHeader("X-Mashape-Key", "jFhD0TiArsmshNSteVQKuPcNs2dGp1CY7tZjsnBLu38ZKsIBrY");
@@ -70,6 +74,7 @@ document.getElementById("submit").addEventListener("click", function(){
 			var names = getColourNames(data);
 			var values = getColourValues(data);
 
+			setBackground(txt);
 			updateColours(names, values);
 			
 			console.log(data);
