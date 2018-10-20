@@ -38,6 +38,18 @@ function updateColours(colourNamesArray, colourValuesArray) {
 }
 
 
+function hexToRgb(hex) {
+var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? {
+			r: parseInt(result[1], 16),
+			g: parseInt(result[2], 16),
+			b: parseInt(result[3], 16)
+	} : null;
+}
+
+alert( hexToRgb("#0033ff").g ); // "51";
+
+
 document.getElementById("submit").addEventListener("click", function(){   
 
 	var request = new XMLHttpRequest();
@@ -64,5 +76,27 @@ document.getElementById("submit").addEventListener("click", function(){
 	}
 
 	request.send();
+
+	var url2 = "http://colormind.io/api/";
+	var dataInput = {
+		model : "default",
+		input : [[44,43,44],[90,83,82],"N","N","N"]
+	}
+
+	var http = new XMLHttpRequest();
+
+	http.onreadystatechange = function() {
+		if(http.readyState == 4 && http.status == 200) {
+			var palette = JSON.parse(http.responseText).result;
+		}
+	}
+
+	//https://media.boingboing.net/wp-content/uploads/2018/02/button-gone.jpg
+
+	http.open("POST", url2, true);
+	http.send(JSON.stringify(dataInput));
+
+	var data2 = JSON.parse(JSON.stringify(dataInput));
+	console.log(data2);
 
 });
