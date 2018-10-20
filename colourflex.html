@@ -2,11 +2,10 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="/flex.php" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!--<link rel="stylesheet" href="/flex.php" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
 	<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
 	
 	<!--curl 'http://colormind.io/api/' --data-binary '{"input":[[44,43,44],[90,83,82],"N","N","N"],"model":"default"}'
-
 	# {"result":[[49,47,49],[91,83,81],[133,155,143],[226,209,167],[235,198,126]]}
 	-->
 </head>
@@ -39,7 +38,12 @@
         <div class="centered">
           <h2>Example</h2>
           <p>Upload a photo:</p>
-          <img src="sketch.jpg" alt="Avatar woman">
+          <img src="img/sketch.jpg" alt="Avatar woman">
+		  
+			<!--<input type="file" name="pic" accept="image/*">-->
+			<input type="text" id="textfield">
+			<input type="submit" id="submit">
+		  
 
         </div>
       </div>
@@ -48,7 +52,7 @@
         <div class="centered">
           <h2>John Doe</h2>
           <p>Some text here too.</p>
-          <img src="logo.jpg" alt="Avatar man">
+          <img src="img/sketch.jpg" alt="Avatar man">
 
         </div>
       </div>
@@ -59,6 +63,8 @@
 
   //PUT API HERE BABES
             <?php include 'imageApi.php';?>
+			
+			<script src="js/scripts.js"></script>
 
         </div>
       </div>
