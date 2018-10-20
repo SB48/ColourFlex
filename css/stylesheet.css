@@ -104,4 +104,18 @@
     .centered img {
       width: 150px;
       border-radius: 50%;
-    }
+}
+
+.colours-right {
+	width: 50%;
+	height: 100px;
+	float: right;
+}
+
+.colours-left {
+	width: 50%;
+	height: 100px;
+	float: left;
+}	
+	
+	
