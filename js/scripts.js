@@ -59,5 +59,26 @@ document.getElementById("submit").addEventListener("click", function(){
 	}
 
 	request.send();
+	
+	var url2 = "http://colormind.io/api/";
+	var dataInput = {
+		model : "default",
+		input : [[44,43,44],[90,83,82],"N","N","N"]
+	}
+
+	var http = new XMLHttpRequest();
+
+	http.onreadystatechange = function() {
+		if(http.readyState == 4 && http.status == 200) {
+			var palette = JSON.parse(http.responseText).result;
+		}
+	}
+	
+	
+	http.open("POST", url2, true);
+	http.send(JSON.stringify(dataInput));
+
+	var data2 = JSON.parse(JSON.stringify(dataInput));
+	console.log(data2);
 
 });
