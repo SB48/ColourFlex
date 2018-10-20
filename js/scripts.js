@@ -9,20 +9,25 @@ function getCount(data, level) {
 }
 
 function getColourNames(data) {
-	getCount(data);
+	var nestedKeys = JSON.stringify(count, 0, 1);
+	var nestedKeysArray = nestedKeys.split(',');
+	var numLoops = nestedKeysArray[1];
 	
 	var colourNames = new Array();
 	
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < numLoops; i++) {
 		colourNames[i] = data.tags[i].label;
 	}
 	return colourNames;
 }
 
 function getColourValues(data) {
+
+	var nestedKeys = JSON.stringify(count, 0, 1)
+	var numLoops = nestedKeys.charAt(7);
 	
 	var colourValues = new Array();
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < numLoops; i++) {
 		colourValues[i] = data.tags[i].color;
 	}
 	return colourValues;
@@ -33,7 +38,6 @@ function setBackground(url) {
 }
 
 function updateColours(colourNamesArray, colourValuesArray) {
-	
 	
 	for (i = 0; i < colourNamesArray.length; i++) {
 		var elem = document.createElement('div');
@@ -80,6 +84,8 @@ document.getElementById("submit").addEventListener("click", function(){
 			var data = JSON.parse(this.response);
 			console.log(data);
 			
+			getCount(data);
+			
 			var names = getColourNames(data);
 			var values = getColourValues(data);
 
@@ -91,10 +97,14 @@ document.getElementById("submit").addEventListener("click", function(){
 
 	request.send();
 
+	/*var RGBColours = new Array();
+	for (i = 0; i < 4; i++) {
+		RGBColours[i] = hexToRgb(values[i]);
+	}
 	var url2 = "http://colormind.io/api/";
 	var dataInput = {
 		model : "default",
-		input : [[44,43,44],[90,83,82],"N","N","N"]
+		input : [RGBColours]
 	}
 
 	var http = new XMLHttpRequest();
@@ -111,6 +121,5 @@ document.getElementById("submit").addEventListener("click", function(){
 	http.send(JSON.stringify(dataInput));
 
 	var data2 = JSON.parse(JSON.stringify(dataInput));
-	console.log(data2);
-
+	console.log(data2);*/
 });
