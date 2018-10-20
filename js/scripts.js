@@ -12,9 +12,9 @@ function getColourNames(data) {
 	var nestedKeys = JSON.stringify(count, 0, 1);
 	var nestedKeysArray = nestedKeys.split(',');
 	var numLoops = nestedKeysArray[1];
-	
+
 	var colourNames = new Array();
-	
+
 	for (i = 0; i < numLoops; i++) {
 		colourNames[i] = data.tags[i].label;
 	}
@@ -25,7 +25,7 @@ function getColourValues(data) {
 
 	var nestedKeys = JSON.stringify(count, 0, 1)
 	var numLoops = nestedKeys.charAt(7);
-	
+
 	var colourValues = new Array();
 	for (i = 0; i < numLoops; i++) {
 		colourValues[i] = data.tags[i].color;
@@ -40,20 +40,20 @@ function setBackground(url) {
 }
 
 function updateColours(colourNamesArray, colourValuesArray) {
-	
+
 	/*for (i = 0; i < colourNamesArray.length; i++) {
 		var elem = document.createElement('div');
-		
+
 		if (i%2 == 0) {
 			elem.className += 'colours-left';
 		} else {
 			elem.className += 'colours-right';
 		}
-		
+
 		console.log(colourNamesArray[i] + " " + colourValuesArray[i]);
 		elem.style.cssText = 'z-index:100;background:' + colourValuesArray[i];
-		
-		
+
+
 		document.getElementById('colourBlocks').appendChild(elem);
 	}*/
 	for (i = 0; i < colourNamesArray.length; i++) {
@@ -119,7 +119,7 @@ var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 }
 
 
-document.getElementById("submit").addEventListener("click", function(){   
+document.getElementById("submit").addEventListener("click", function(){
 
 	var request = new XMLHttpRequest();
 	var txt = document.getElementById('textfield').value;
@@ -135,15 +135,15 @@ document.getElementById("submit").addEventListener("click", function(){
 			// Begin accessing JSON data here
 			var data = JSON.parse(this.response);
 			console.log(data);
-			
+
 			getCount(data);
-			
+
 			var names = getColourNames(data);
 			var values = getColourValues(data);
 
 			setBackground(txt);
 			updateColours(names, values);
-			
+
 			console.log(data);
 	}
 
