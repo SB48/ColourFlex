@@ -1,0 +1,39 @@
+/*The navigation bar*/
+  .navbar {
+      padding-bottom: 10px;
+      background-color: #333;
+      position: absolute; /* Set the navbar to fixed position */
+      top: 0; /* Position the navbar at the top of the page */
+      width: 100%; /* Full width */
+      padding: 2px;
+  }
+
+  .title {
+    color: #6610f2;
+    padding-left: 30px;
+    text-align: center;
+  }
+
+  .bgcolour {
+    color: #6610f2;
+  }
+
+  .logo {
+    padding-top: 5px;
+  }
+  /* Links inside the navbar */
+
+  .navbar a {
+      display: block;
+      color: #333;
+      text-align: center;
+      padding: 10px 10px;
+      text-decoration: none;
+  }
+
+
+  /* Change background on mouse-over */
+  .navbar a:hover {
+      background: #444;
+      color: black;
+  }
