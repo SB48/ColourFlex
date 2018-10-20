@@ -1,6 +1,15 @@
+count=[];
+function getCount(data, level) {
+    level = level || 0;
+    count[level] = count[level] || 0;
+    for (var k in data) {
+        data.hasOwnProperty(k) && count[level]++;
+        typeof data[k] === 'object' && getCount(data[k], level + 1);
+    }
+}
 
 function getColourNames(data) {
-
+	getCount(data);
 	
 	var colourNames = new Array();
 	
