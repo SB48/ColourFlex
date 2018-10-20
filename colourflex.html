@@ -1,8 +1,15 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-curl 'http://colormind.io/api/' --data-binary '{"input":[[44,43,44],[90,83,82],"N","N","N"],"model":"default"}'
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="/flex.php" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+	
+	<!--curl 'http://colormind.io/api/' --data-binary '{"input":[[44,43,44],[90,83,82],"N","N","N"],"model":"default"}'
 
-# {"result":[[49,47,49],[91,83,81],[133,155,143],[226,209,167],[235,198,126]]}
-
+	# {"result":[[49,47,49],[91,83,81],[133,155,143],[226,209,167],[235,198,126]]}
+	-->
+</head>
 
 <body style = "background-color:white;">
   <div class="container-fluid">
@@ -10,7 +17,7 @@ curl 'http://colormind.io/api/' --data-binary '{"input":[[44,43,44],[90,83,82],"
       <nav class="navbar navbar-expand-md navbar-dark fixed-top float-right">
         <div class="col-8 title">
           <div class="row">
-            <div class="col-xs-6 logo"><img  src="Logo.PNG" width = "42" href="https://github.com/SB48"></div>
+            <div class="col-xs-6 logo"><img  src="img/logo.png" width = "42" href="https://github.com/SB48"></div>
             <div class="col-xs-6 title"><h1>ColourFlex</h1></div>
           </div>
         </div>
@@ -38,47 +45,4 @@ curl 'http://colormind.io/api/' --data-binary '{"input":[[44,43,44],[90,83,82],"
     </div>
   </div>
 </body>
-
-
-  <style>
-
-  /*The navigation bar*/
-  .navbar {
-      padding-bottom: 10px;
-      background-color: #333;
-      position: absolute; /* Set the navbar to fixed position */
-      top: 0; /* Position the navbar at the top of the page */
-      width: 100%; /* Full width */
-      padding: 2px;
-  }
-
-  .title {
-    color: #6610f2;
-    padding-left: 30px;
-    text-align: center;
-  }
-
-  .bgcolour {
-    color: #6610f2;
-  }
-
-  .logo {
-    padding-top: 5px;
-  }
-  /* Links inside the navbar */
-
-  .navbar a {
-      display: block;
-      color: #333;
-      text-align: center;
-      padding: 10px 10px;
-      text-decoration: none;
-  }
-
-
-  /* Change background on mouse-over */
-  .navbar a:hover {
-      background: #444;
-      color: black;
-  }
-  </style>
+</html>
